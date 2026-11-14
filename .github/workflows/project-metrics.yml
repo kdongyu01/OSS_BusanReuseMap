@@ -1,0 +1,43 @@
+name: GitHub Project metrics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * 1'
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Collect Project metrics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_API_URL: ${{ github.api_url }}
+          PROJECT_METRICS_OUTPUT: artifacts/project-metrics.json
+        run: node scripts/collect-project-metrics.mjs
+
+      - name: Render report
+        env:
+          PROJECT_METRICS_INPUT: artifacts/project-metrics.json
+          PROJECT_METRICS_REPORT: artifacts/project-metrics.md
+        run: node scripts/render-project-metrics.mjs
+
+      - name: Upload Project metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-metrics-${{ github.run_number }}
+          path: artifacts/
+          retention-days: 30
