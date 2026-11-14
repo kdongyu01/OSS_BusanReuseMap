@@ -1,4 +1,4 @@
-# 8주차 Workflow 최적화
+# Workflow 최적화
 
 ## 구현 항목
 
