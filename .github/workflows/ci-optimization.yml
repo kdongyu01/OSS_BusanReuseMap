@@ -2,6 +2,13 @@ name: CI optimization benchmark
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/actions/**'
+      - '.github/workflows/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   no-cache:

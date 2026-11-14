@@ -9,7 +9,7 @@
 
 ## 측정 방법
 
-GitHub Actions에서 `CI optimization benchmark`를 수동 실행합니다. `npm-cache: false`와 `npm-cache: true` 실행 시간을 각각 측정하고, `ci-optimization-report` Artifact의 Markdown과 JSON을 제출 증빙으로 사용합니다.
+GitHub Actions에서 `CI optimization benchmark`를 수동 실행하거나 관련 Workflow·의존성 변경을 `main`에 push합니다. `npm-cache: false`와 `npm-cache: true` 실행 시간을 각각 측정하고, `ci-optimization-report` Artifact의 Markdown과 JSON을 제출 증빙으로 사용합니다.
 
 개선률은 다음 식으로 계산합니다.
 
