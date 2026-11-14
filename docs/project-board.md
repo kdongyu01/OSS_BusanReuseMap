@@ -4,6 +4,10 @@
 
 Project 이름: `OSS_BusanReuseMap MVP`
 
+실제 Project: https://github.com/users/kdongyu01/projects/5
+
+저장소에 연결된 공개 Project이며, 현재 초기 백로그 Issue 10개가 `To Do` 상태로 등록되어 있습니다.
+
 보드 상태:
 
 1. Backlog
