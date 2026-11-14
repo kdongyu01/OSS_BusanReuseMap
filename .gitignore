@@ -5,6 +5,7 @@ dist/
 .env.*
 !.env.example
 coverage/
+artifacts/
 *.log
 __pycache__/
 .venv/
