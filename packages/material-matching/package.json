@@ -1,0 +1,11 @@
+{
+  "name": "@kdongyu01/oss-busan-reuse-utils",
+  "version": "0.1.0",
+  "description": "Utilities for matching reusable industrial surplus materials",
+  "type": "module",
+  "license": "MIT",
+  "files": ["src", "README.md"],
+  "exports": {
+    ".": "./src/index.js"
+  }
+}
