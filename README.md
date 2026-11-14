@@ -4,7 +4,6 @@
 
 현재 저장소에는 1~8주차의 프로젝트 관리, 협업 문서화, CI/CD, DORA 측정, Workflow 최적화 파이프라인이 구축되어 있습니다. 서비스 화면과 매칭 결과는 실제 기업 데이터가 확보·검증되기 전까지 시제품 상태로 취급합니다.
 
-## 1~8주차 구축 성과
 
 - **서비스 MVP:** 부산 센텀시티 일반산업단지의 잔여자재 등록, 지도·목록 탐색, 조건 기반 재사용 후보 매칭
 - **프로젝트 관리:** GitHub Issues 템플릿, 라벨, `Foundation`·`MVP` Milestone, [GitHub Projects 칸반 보드](https://github.com/users/kdongyu01/projects/5)
