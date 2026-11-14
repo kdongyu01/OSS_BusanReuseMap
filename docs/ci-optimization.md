@@ -18,3 +18,15 @@ $$
 $$
 
 실제 실행 전에는 예상 수치를 작성하지 않습니다. Artifact 생성 후 측정값을 이 문서 또는 README에 기록합니다.
+
+## 실제 측정 결과
+
+2026-11-14 실행 결과:
+
+| 구분 | 실행 시간 |
+|---|---:|
+| 캐시 미사용 | 41.49초 |
+| npm 캐시 사용 | 9.93초 |
+| 개선률 | **76.07%** |
+
+공식 증빙은 [CI optimization Workflow](https://github.com/kdongyu01/OSS_BusanReuseMap/actions/workflows/ci-optimization.yml)의 `ci-optimization-report` Artifact입니다.

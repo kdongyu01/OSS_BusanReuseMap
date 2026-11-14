@@ -2,7 +2,7 @@
 
 ## 패키지
 
-`@kdongyu01/oss-busan-reuse-utils`는 잔여자재 매칭에 필요한 순수 함수를 별도 npm 패키지로 분리한 8주차 실습 대상입니다.
+`@kdongyu01/oss-busan-reuse-utils`는 잔여자재 매칭에 필요한 순수 함수를 별도 npm 패키지로 분리한 9주차 실습 대상입니다.
 
 ## 실행
 

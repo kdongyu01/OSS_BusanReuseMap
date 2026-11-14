@@ -24,3 +24,9 @@ Conventional Commits 형식을 사용합니다.
 4. Pull Request를 생성합니다.
 5. 개인 리뷰 체크리스트와 빌드 결과를 확인합니다.
 6. `main`에 병합합니다.
+
+## 관련 문서
+
+- [Getting Started](getting-started.md) / Wiki: [[Getting Started]]
+- [Troubleshooting](troubleshooting.md) / Wiki: [[Troubleshooting]]
+- Wiki 시작 페이지: [[Home]]

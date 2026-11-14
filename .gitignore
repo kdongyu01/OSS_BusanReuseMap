@@ -6,6 +6,7 @@ dist/
 !.env.example
 coverage/
 artifacts/
+ci-optimization-report/
 .ci-start
 ci-timing.json
 *.log
