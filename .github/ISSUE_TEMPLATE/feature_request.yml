@@ -1,0 +1,30 @@
+name: Feature
+description: 서비스 기능 또는 개발 작업을 제안합니다.
+title: "[Feature] "
+labels:
+  - "type: feature"
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 목표
+      description: 이 작업으로 해결하려는 사용자 문제를 작성합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 범위
+      description: 입력, 처리, 출력과 제외 범위를 작성합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건
+      description: 구현 여부를 판단할 수 있는 체크리스트를 작성합니다.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
