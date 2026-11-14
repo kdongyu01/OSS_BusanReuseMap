@@ -1,6 +1,6 @@
 # DORA 측정 설계
 
-워크플로 파일은 `.github/workflows/dora.yml`이며, 매주 월요일 또는 수동 실행으로 최근 30일의 GitHub 기록을 수집합니다.
+워크플로 파일은 `.github/workflows/dora.yml`이며, 매주 월요일 또는 수동 실행으로 최근 30일의 GitHub 기록을 수집합니다. 실행 결과에는 JSON, HTML 대시보드, Markdown 주간 보고서가 함께 포함됩니다.
 
 ## 지표 정의
 

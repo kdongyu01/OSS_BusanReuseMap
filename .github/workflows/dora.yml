@@ -40,6 +40,12 @@ jobs:
           DORA_HTML: artifacts/dora-dashboard.html
         run: node scripts/render-dora-dashboard.mjs
 
+      - name: Render weekly report
+        env:
+          DORA_INPUT: artifacts/dora-report.json
+          DORA_REPORT: artifacts/dora-weekly-report.md
+        run: node scripts/render-dora-report.mjs
+
       - name: Upload DORA report
         uses: actions/upload-artifact@v4
         with:

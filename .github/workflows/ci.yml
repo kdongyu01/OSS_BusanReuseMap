@@ -46,6 +46,8 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    env:
+      CI_DEPLOY_MARKER: ${{ secrets.CI_DEPLOY_MARKER }}
     permissions:
       contents: read
     steps:
@@ -60,6 +62,10 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Verify deployment secret is available
+        if: env.CI_DEPLOY_MARKER != ''
+        run: echo "Deployment secret is configured without exposing its value."
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4

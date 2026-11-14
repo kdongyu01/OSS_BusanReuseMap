@@ -8,6 +8,13 @@
 - 선택과제는 1~8주차 필수과제 완료 후 시작
 - PR 리뷰는 외부 리뷰어 없이 개인 리뷰 실습으로 기록
 
+## 1주차 환경 증빙
+
+- 본 저장소 원격: `git@github.com:kdongyu01/OSS_BusanReuseMap.git`
+- SSH 연결 확인: `ssh -T git@github.com` 성공
+- 테스트 저장소: https://github.com/kdongyu01/OSS_BusanReuseMap-test
+- 테스트 저장소에서 `test: verify GitHub SSH push` commit/push 완료
+
 ## 1~8주차 필수과제
 
 1. GitHub·SSH·React 개발 환경과 프로젝트 제안
