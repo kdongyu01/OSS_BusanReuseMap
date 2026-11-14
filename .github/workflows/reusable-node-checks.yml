@@ -1,0 +1,58 @@
+name: Reusable Node checks
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        required: true
+      runner:
+        type: string
+        required: true
+      npm-cache:
+        type: boolean
+        required: false
+        default: true
+      benchmark-name:
+        type: string
+        required: false
+        default: ''
+
+jobs:
+  check:
+    runs-on: ${{ inputs.runner }}
+    outputs:
+      elapsed_seconds: ${{ steps.timer.outputs.elapsed_seconds }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Start timer
+        run: node -e "require('fs').writeFileSync('.ci-start', String(Date.now()))"
+
+      - name: Install Node dependencies
+        uses: ./.github/actions/setup-node-deps
+        with:
+          node-version: ${{ inputs.node-version }}
+          npm-cache: ${{ inputs.npm-cache }}
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Stop timer
+        id: timer
+        if: always()
+        run: node scripts/write-ci-timing.mjs
+        env:
+          CI_CACHE_MODE: ${{ inputs.npm-cache }}
+
+      - name: Upload benchmark timing
+        if: inputs.benchmark-name != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-timing-${{ inputs.benchmark-name }}
+          path: ci-timing.json
+          retention-days: 30

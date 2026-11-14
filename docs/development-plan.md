@@ -17,7 +17,8 @@
 5. Wiki 또는 docs 기반 비동기 협업 문서
 6. Public OSS 파일과 라이선스 구조
 7. Lint·Test·Matrix·Build-Test-Deploy CI/CD
-8. GitHub Packages 최소 실습
+8. Reusable Workflow, Composite Action, 캐싱·조건부 배포 최적화
+9. GitHub Packages 및 의존성 보안 자동화
 
 ## 초기 검증 기준
 

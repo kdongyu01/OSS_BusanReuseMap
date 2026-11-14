@@ -6,6 +6,8 @@ dist/
 !.env.example
 coverage/
 artifacts/
+.ci-start
+ci-timing.json
 *.log
 __pycache__/
 .venv/

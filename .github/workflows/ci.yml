@@ -11,30 +11,37 @@ permissions:
 jobs:
   test:
     name: Test Node ${{ matrix.node-version }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    uses: ./.github/workflows/reusable-node-checks.yml
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [20, 22]
+    with:
+      node-version: ${{ matrix.node-version }}
+      runner: ${{ matrix.os }}
+      npm-cache: true
+
+  changes:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      app_changed: ${{ steps.filter.outputs.app_changed }}
     steps:
-      - name: Checkout
+      - name: Checkout history
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
+          fetch-depth: 2
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Test
-        run: npm test
+      - name: Detect application changes
+        id: filter
+        shell: bash
+        run: |
+          if git diff --name-only HEAD^ HEAD | grep -Eq '^(src/|public/|package(-lock)?\.json$|vite\.config\.ts$|index\.html$)'; then
+            echo "app_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "app_changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
   build:
     needs: test
@@ -46,13 +53,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: ./.github/actions/setup-node-deps
         with:
-          node-version-file: .nvmrc
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
+          node-version: 22
+          npm-cache: true
 
       - name: Build
         run: npm run build
@@ -65,8 +69,8 @@ jobs:
           retention-days: 7
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: build
+    needs: [build, changes]
+    if: needs.changes.outputs.app_changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -80,6 +84,9 @@ jobs:
         with:
           name: vite-dist
           path: dist/
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

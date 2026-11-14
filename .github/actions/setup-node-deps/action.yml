@@ -1,0 +1,29 @@
+name: Setup Node dependencies
+description: Configure Node.js, npm cache, and install locked dependencies
+inputs:
+  node-version:
+    description: Node.js version
+    required: true
+  npm-cache:
+    description: Enable npm cache
+    required: false
+    default: 'true'
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js with npm cache
+      if: inputs.npm-cache == 'true'
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: npm
+
+    - name: Set up Node.js without npm cache
+      if: inputs.npm-cache != 'true'
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci

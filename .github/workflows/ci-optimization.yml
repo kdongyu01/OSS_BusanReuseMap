@@ -1,0 +1,45 @@
+name: CI optimization benchmark
+
+on:
+  workflow_dispatch:
+
+jobs:
+  no-cache:
+    uses: ./.github/workflows/reusable-node-checks.yml
+    with:
+      node-version: 22
+      runner: ubuntu-latest
+      npm-cache: false
+      benchmark-name: no-cache
+
+  cache:
+    uses: ./.github/workflows/reusable-node-checks.yml
+    with:
+      node-version: 22
+      runner: ubuntu-latest
+      npm-cache: true
+      benchmark-name: cache
+
+  report:
+    needs: [no-cache, cache]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download benchmark results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: ci-timing-*
+          path: benchmark
+          merge-multiple: false
+
+      - name: Render comparison report
+        run: node scripts/render-ci-optimization.mjs
+
+      - name: Upload comparison report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-optimization-report
+          path: artifacts/
+          retention-days: 30
