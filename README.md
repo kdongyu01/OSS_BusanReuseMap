@@ -41,6 +41,10 @@ npm run build
 - [Troubleshooting](docs/troubleshooting.md)
 - [DORA 측정 설계](docs/dora.md)
 - [8주차 Workflow 최적화 리포트](docs/ci-optimization.md)
+- [선택과제 현황](docs/optional-tasks.md)
+- [Project 지표 설계](docs/project-metrics.md)
+- [ADR 목록](docs/adr/README.md)
+- [라이선스·Inner Source 로드맵](docs/license-and-innersource.md)
 
 DORA 결과는 [DORA Actions Workflow](https://github.com/kdongyu01/OSS_BusanReuseMap/actions/workflows/dora.yml)에서, 캐시 최적화 결과는 [CI optimization Workflow](https://github.com/kdongyu01/OSS_BusanReuseMap/actions/workflows/ci-optimization.yml)의 Artifact에서 확인할 수 있습니다.
 

@@ -1,0 +1,21 @@
+name: Issue auto response
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  respond:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add triage guidance
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --repo "$REPOSITORY" --body "감사합니다. 담당자는 7일 이내에 재현 절차와 완료 조건을 확인합니다. 긴급한 보안 문제는 공개 Issue에 비밀정보를 남기지 말고 저장소 관리자에게 별도로 알려주세요."
