@@ -28,6 +28,10 @@ npm run build
 - [프로젝트 제안서](docs/project-proposal.md)
 - [개발 계획](docs/development-plan.md)
 - [데이터 공개 정책](docs/data-policy.md)
+- [Getting Started](docs/getting-started.md)
+- [Development Guide](docs/development-guide.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [DORA 측정 설계](docs/dora.md)
 
 ## 데이터 원칙
 
