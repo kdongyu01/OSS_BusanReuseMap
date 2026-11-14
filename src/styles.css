@@ -1,0 +1,86 @@
+:root {
+  color: #17231d;
+  background: #e8eee8;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.app-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 32px;
+  background: radial-gradient(circle at 20% 10%, #f6f1dd 0 18%, transparent 42%), #e8eee8;
+}
+
+.hero {
+  width: min(720px, 100%);
+  padding: clamp(32px, 8vw, 88px);
+  border: 1px solid #b8c5ba;
+  background: #fbfcf8;
+  box-shadow: 16px 16px 0 #b6c8b5;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: #286147;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 580px;
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.summary {
+  max-width: 520px;
+  margin: 28px 0 0;
+  color: #53625a;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 10px 14px;
+  border: 1px solid #b8c5ba;
+  color: #286147;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e07a42;
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .hero {
+    box-shadow: 8px 8px 0 #b6c8b5;
+  }
+}

@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.vite/
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+__pycache__/
+.venv/
+venv/
+
+# Course source materials are kept outside the project history.
+/lecture/
+/과제/
+/*.pdf
+/*PRD*.txt
+/*오픈소스 패키지*.png
