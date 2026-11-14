@@ -30,7 +30,7 @@
 ## 기술 스택
 
 - React + TypeScript + Vite: 단일 개발자가 빠르게 구현하고 정적 배포하기 위한 사용자 화면
-- GitHub Pages: 1~7주차 CI/CD와 Deployment 기록을 함께 검증하기 위한 배포 대상
+- GitHub Pages: 정적 MVP와 Deployment 기록을 함께 운영하기 위한 배포 대상
 - Python + Pandas/GeoPandas: 후속 데이터 정제와 GeoJSON 생성
 - MapLibre GL JS: 후속 지도 화면
 - GitHub Actions: Lint, Test, Build, 배포, DORA 기록 수집
@@ -41,15 +41,12 @@
 
 | 기간 | 목표 |
 |---|---|
-| 1~2주차 | 저장소, React 골격, DORA 측정 기반 |
-| 3~4주차 | Issue/Project 운영과 PR 개인 리뷰 |
-| 5~6주차 | 문서화와 Public OSS 구조 |
-| 7~8주차 | CI/CD와 Workflow 최적화 |
-| 9~10주차 | GitHub Packages·의존성 보안과 공개·합성 데이터 정제 |
-| 11~12주차 | 지도, 필터, 자재 상세 화면 |
-| 13~14주차 | 매칭 점수와 검증 화면 |
-| 15주차 | 모바일·접근성·오류 상태 개선 |
-| 16주차 | 발표 시나리오, 성능 점검, 한계 문서화 |
+| 기반 구축 | 저장소, React 골격, 프로젝트 운영과 DORA 측정 |
+| 자동화 강화 | CI/CD, Workflow 최적화, 패키지·의존성 보안 |
+| 데이터 준비 | 공개·합성 데이터 정제와 GeoJSON |
+| 서비스 MVP | 지도, 필터, 자재 상세 화면 |
+| 검증·개선 | 매칭 점수, 모바일·접근성·오류 상태 검증 |
+| 공개 준비 | 발표 시나리오, 성능 점검, 한계 문서화 |
 
 ## 성공 판단
 

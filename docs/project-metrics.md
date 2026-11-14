@@ -1,6 +1,6 @@
 # GitHub Project 지표
 
-`.github/workflows/project-metrics.yml`은 GitHub Issue와 Milestone 기록을 이용해 선택과제 지표를 산출합니다.
+`.github/workflows/project-metrics.yml`은 GitHub Issue와 Milestone 기록을 이용해 프로젝트 운영 지표를 산출합니다.
 
 - **Cycle Time:** Issue 생성부터 종료까지의 시간
 - **Velocity:** Milestone별 종료 Issue 수

@@ -5,27 +5,26 @@
 - 기본 브랜치: `main`
 - 기능 브랜치: `feature/<작업명>`
 - Conventional Commits 사용
-- 선택과제는 1~8주차 필수과제 완료 후 시작
 - PR 리뷰는 외부 리뷰어 없이 개인 리뷰 실습으로 기록
 
-## 1주차 환경 증빙
+## 개발 환경 증빙
 
 - 본 저장소 원격: `git@github.com:kdongyu01/OSS_BusanReuseMap.git`
 - SSH 연결 확인: `ssh -T git@github.com` 성공
 - 테스트 저장소: https://github.com/kdongyu01/OSS_BusanReuseMap-test
 - 테스트 저장소에서 `test: verify GitHub SSH push` commit/push 완료
 
-## 1~8주차 필수과제
+## 프로젝트 운영 범위
 
-1. GitHub·SSH·React 개발 환경과 프로젝트 제안
-2. GitHub Actions 기반 DORA 수집
-3. GitHub Projects와 10개 이상 Issue
-4. Feature 브랜치, PR 3건, `[MUST]`·`[SHOULD]` 개인 리뷰
-5. Wiki 또는 docs 기반 비동기 협업 문서
-6. Public OSS 파일과 라이선스 구조
-7. Lint·Test·Matrix·Build-Test-Deploy CI/CD
-8. Reusable Workflow, Composite Action, 캐싱·조건부 배포 최적화
-9. GitHub Packages 및 의존성 보안 자동화
+- GitHub·SSH·React 개발 환경과 프로젝트 제안
+- GitHub Actions 기반 DORA 수집
+- GitHub Projects와 Issue 백로그
+- Feature 브랜치, PR, `[MUST]`·`[SHOULD]` 개인 리뷰
+- Wiki와 저장소 기반 비동기 협업 문서
+- Public OSS 파일과 라이선스 구조
+- Lint·Test·Matrix·Build-Test-Deploy CI/CD
+- Reusable Workflow, Composite Action, 캐싱·조건부 배포 최적화
+- GitHub Packages 및 의존성 보안 자동화
 
 ## 초기 검증 기준
 
