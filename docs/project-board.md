@@ -18,7 +18,7 @@ Project 이름: `OSS_BusanReuseMap MVP`
 
 Milestone:
 
-- `Foundation`: 1~8주차 개발 운영과 자동화
+- `Foundation`: 개발 운영과 자동화
 - `MVP`: 지도, 데이터, 매칭 기능
 
 ## 라벨
